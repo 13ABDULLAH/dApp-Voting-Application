@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Candidate</title>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.1/ethers.umd.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Voting</a>
+        <a href="registercandidate.html">Register Candidate</a>
+        <a href="registervoter.html">Register Voter</a>
+        <a href="results.html">Results</a>
+    </div>
+
+    <div class="container">
+        <h1>Register Candidate</h1>
+    </div>
+
+    <div class="container">
+        <button onclick="connectMetamask()">Connect MetaMask</button>
+        <p id="metamasknotification"></p>
+    </div>
+
+    <div class="container">
+        <form id="registerCandidateForm">
+            <label for="candidateAdress">Candidate Address:</label>
+            <input type="text" id="candidateAddress" name="candidateAddress" required>
+            <label for="candidateName">Candidate Name:</label>
+            <input type="text" id="candidateName" name="candidateName" required>
+            <label for="candidateDescription">Candidate Description:</label>
+            <input type="text" id="candidateDescription" name="candidateDescription" required>
+            <label for="nationalId">National ID:</label>
+            <input type="text" id="nationalId" name="nationalId" required>
+            <button type="submit" onclick="registerCandidate()">Register</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <button onclick="getAllCandidates()">List All Candidates</button>
+        <p id="p3"></p>
+    </div>
+
+    <div class="container">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Candidate Name</th>
+                    <th>Candidate Description</th>
+                    <th>National ID</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Candidate rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
